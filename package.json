@@ -1,0 +1,30 @@
+{
+  "name": "borntired",
+  "version": "1.0.0",
+  "description": "personal web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkmerritt/borntired.git"
+  },
+  "author": "Kevin Merritt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kkmerritt/borntired/issues"
+  },
+  "homepage": "https://github.com/kkmerritt/borntired#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "eyespect": "^0.1.10",
+    "jquery": "^2.1.4",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.1.10",
+    "morgan": "^1.6.1"
+  }
+}
