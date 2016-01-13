@@ -1,0 +1,32 @@
+
+<div class="container">
+
+  <div class="row">
+    <div class="box">
+      <div class="col-lg-12">
+        <hr>
+        <h2 class="intro-text text-center">my
+          <strong>content</strong>
+          <hr>
+          <h1 class="avatar-buttons"><%= user.avatar %> </h1> <h4> posts By: <b><font color= #C64044> <%= user.email %></font></b></h4><br>
+          <hr>
+          <% post.forEach(function (post, i) { %>
+            <div class="col-lg-12">
+              <h2> <%= post.title %> </h2>
+              <h4> <%= post.content %> </h4>
+              <hr>
+            </div> <% }) %>
+
+            <h3>COMMENTS</h3>
+            <% user.comments.forEach(function (comment, i) { %>
+              <div class="col-lg-12">
+                <h4> <%= comment %> </h4>
+                <hr>
+              </div> <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- /.container -->
