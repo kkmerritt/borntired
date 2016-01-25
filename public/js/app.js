@@ -3,6 +3,10 @@
 
 var app = angular.module("borntired", []);
 
+app.run(function($rootScope) {
+    $rootScope.bgcolor = 'whitesmoke'; 
+});
+
 app.controller("myCtrl", function($scope) {
     $scope.firstName = "Kevin";
     $scope.lastName = "Merritt";
