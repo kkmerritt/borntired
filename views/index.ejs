@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="borntired" content="">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon" />
   <script src="js/app.js"></script>
+
   <title>borntired...</title>
 
   <!-- Fonts -->
@@ -20,19 +17,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
+<!-- begin of html / angular  -->
 
 <header>
   <br>
   <img id="btlogo" src = "/img/borntiredlogo.png">
 </header>
 
-<body>
+<main ng-app="borntired" ng-controller="myCtrl">
+{{ firstName + " " + lastName }}
+
+
+<div class='article-directive'>
+
+  <!-- article directive controller content here -->
+</div>
+
 <article>
 <br><br>
-<h1>About Me</h1>
 <p>Freelance Web Developer. Formerly attended <a href="http://www.generalassemb.ly">General Assembly</a>.This site is currently being built. In the meantime please enjoy
   my social media presence.</p>
 </article>
+
 
 <footer>
   <a href="http://www.facebook.com/alcoholicjedi"><img class="footer-icons" src="./img/icons/fb.png"></a>
@@ -43,14 +49,21 @@
   <a href="http://www.quora.com/profile/Kevin-Merritt-2"><img class="footer-icons" src="./img/icons/qa.png"></a>
 </footer>
 
+<br><br><br><br><br><br>
 
+<form name="myForm">
+Newsletter Sign Up:    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
+<br><br>
+    <h5>Status</h5>
+<h6>Your Entry is Valid: {{myForm.myAddress.$valid}} </h6>
+<h6>Your Entry is Dirty: {{myForm.myAddress.$dirty}}</h6>
+<h6>Your Entry has been focused upon: {{myForm.myAddress.$touched}}</h6>
+</form>
 
-
-</body>
-
+</main>
+<!-- end of html / angular  -->
 </html>
-
-
 
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -90,14 +90,19 @@ footer {
 }
 
 
-
 header {}
 
 #btlogo {
   width: 30%;
-
 }
 
+/*angular styling */
+input.ng-valid {
+    background-color: lightgreen;
+}
+input.ng-invalid {
+    background-color: red;
+}
 
 /*media styles*/
 
