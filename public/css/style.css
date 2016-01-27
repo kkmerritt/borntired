@@ -9,7 +9,6 @@ html {
 }
 
 body  {
-  background-image: url("/img/graphpaperbg.jpg");
   background-repeat: repeat-y;
   background-position: top 10%;
   background-size: cover;
@@ -90,10 +89,15 @@ footer {
 }
 
 
-header {}
+header {
+  background-image: url("/img/graphpaperbg.jpg");
+  background-size: 100%;
+}
 
 #btlogo {
   width: 30%;
+  margin-left: 10%;
+
 }
 
 /*angular styling */
