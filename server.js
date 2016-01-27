@@ -4,8 +4,7 @@
 
 var express      = require('express'),
     ejs          = require('ejs'),
-
-  bodyParser     = require('body-parser'),
+   bodyParser     = require('body-parser'),
   methodOverride = require('method-override'),
   morgan         = require('morgan'),
   session        = require('express-session'),
@@ -46,3 +45,9 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 
 server.get('/', function(req, res){res.render('index');});
 server.get('/404', function(req,res){res.render('404')})//error page.
+
+server.get('/projects', function(req, res){res.render('projects');});
+server.get('/photography', function(req, res){res.render('photography');});
+server.get('/social', function(req, res){res.render('social');});
+server.get('/blog', function(req, res){res.render('blog');});
+server.get('/professional', function(req, res){res.render('professional');});

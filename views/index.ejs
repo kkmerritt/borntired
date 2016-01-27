@@ -26,7 +26,16 @@
 
 <main ng-app="borntired" ng-controller="myCtrl">
 {{ firstName + " " + lastName }}
+<br><br>
 
+<ul>
+  <li><a href="/projects">projects</a><br>
+<li><a href="/blog">rated blog</a><br>
+<li><a href="/social">social</a><br>
+<li><a href="/photography">photography / woodworking </a><br>
+<li><a href="/professional">professional</a><br>
+</ul>
+<br><br>
 
 <div class='article-directive'>
 
@@ -40,20 +49,7 @@
 </article>
 
 <p> the rootscope background color of this app is <strong> {{bgcolor}} </strong> </p>
-<br><br>
-<br><br>
-
-<footer>
-  <a href="http://www.facebook.com/alcoholicjedi"><img class="footer-icons" src="./img/icons/fb.png"></a>
-  <a href="https://github.com/kkmerritt"><img class="footer-icons" src="./img/icons/gh.png"></a>
-  <a href="mailto:kkmerritt@gmail.com"><img class="footer-icons" src="./img/icons/gm.png"></a>
-  <a href="http://instagram.com/alcoholicjedi/"><img class="footer-icons" src="./img/icons/ig.png"></a>
-  <a href="http://www.linkedin.com/in/kevinkmerritt"><img class="footer-icons" src="./img/icons/li.png"></a>
-  <a href="http://www.quora.com/profile/Kevin-Merritt-2"><img class="footer-icons" src="./img/icons/qa.png"></a>
-</footer>
-
-<br><br><br><br><br><br>
-
+<br><br><br>
 <form name="myForm">
 Newsletter Sign Up:    <input type="email" name="myAddress" ng-model="text">
     <span ng-show="myForm.myAddress.$error.email">Not a valid e-mail address</span>
