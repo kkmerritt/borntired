@@ -2,21 +2,27 @@
 // NOTE: ----------------------  Forum Project
 // NOTE: ----------------------  Server.js
 
-var express      = require('express'),
-    ejs          = require('ejs'),
-   bodyParser     = require('body-parser'),
-  methodOverride = require('method-override'),
-  morgan         = require('morgan'),
-  session        = require('express-session'),
-  // User           = require('./models/user.js'),
-  logger         = require('./misc/logger.js'),
-  eyes           = require('eyespect'),
+var express      = require('express');
+var    ejs          = require('ejs');
+var   bodyParser    = require('body-parser');  // pull information from HTML POST (express4)
+var  methodOverride = require('method-override');  // simulate DELETE and PUT (express4)
+var  morgan         = require('morgan');    // log requests to the console (express4)
+var  session        = require('express-session');
+// var  User           = require('./models/user.js');
+var  logger         = require('./misc/logger.js');
+var  eyes           = require('eyespect');
+var mongoose = require('mongoose');                     // mongoose for mongodb
+
+
+
+
 
 PORT = process.env.PORT || 3000, server = express(),
 MONGOURI = process.env.MONGOLAB_URI || "mongodb://localhost:27017/users",
   dbname = "borntired", mongoose = require('mongoose');
 
 // NOTE: ---------------------- Activate / Use Middleware
+
 server.set('view engine', 'ejs'); // tells the render method, what to use
 server.set('views', './views'); // tells the renderer where to find templates
 
@@ -32,6 +38,13 @@ server.use(methodOverride('_method'));
 server.use(morgan('dev'));
 server.use(logger);
 
+
+// NOTE: ---------------------- DB Models
+ var Article = mongoose.model('Article', {
+     text : String
+ });
+
+
 // NOTE: ---------------------- Server & Database Connections
 mongoose.connect(MONGOURI + "/" + dbname)
 server.listen(PORT,function(){console.log("SERVER IS UP ON PORT:", PORT);})
@@ -43,11 +56,22 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 
 // NOTE: ---------------------- Server Routes
 
-server.get('/', function(req, res){res.render('index');});
-server.get('/404', function(req,res){res.render('404')})//error page.
+server.get('/', function(req, res){res.sendfile('index.html');});
 
-server.get('/projects', function(req, res){res.render('projects');});
-server.get('/photography', function(req, res){res.render('photography');});
-server.get('/social', function(req, res){res.render('social');});
-server.get('/blog', function(req, res){res.render('blog');});
-server.get('/professional', function(req, res){res.render('professional');});
+// NOTE: begin old server routes section----------->>>
+
+// NOTE: KEVIN you commented this out as you only
+// need to render / send index. angular should handle
+// all else.
+
+// server.get('/404', function(req,res){res.render('404')})//error page.
+//
+// server.get('/projects', function(req, res){res.render('projects');});
+// server.get('/photography', function(req, res){res.render('photography');});
+// server.get('/social', function(req, res){res.render('social');});
+// server.get('/articles', function(req, res){res.render('articles');});
+// server.get('/professional', function(req, res){res.render('professional');});
+// server.get('/woodworking', function(req, res){res.render('woodworking');});
+// server.get('/hanoi/index', function(req, res){res.render('/hanoi/index');});
+
+// NOTE: end old server routes section----------->>>
