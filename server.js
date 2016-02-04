@@ -56,7 +56,8 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 
 // NOTE: ---------------------- Server Routes
 
-server.get('/', function(req, res){res.sendfile('index.html');});
+server.get('/', function(req, res){res.render('index');});
+server.get('/professional', function(req, res){res.render('professional');});
 
 // NOTE: begin old server routes section----------->>>
 
@@ -65,7 +66,6 @@ server.get('/', function(req, res){res.sendfile('index.html');});
 // all else.
 
 // server.get('/404', function(req,res){res.render('404')})//error page.
-server.get('/professional', function(req, res){res.render('professional');});
 //
 // server.get('/projects', function(req, res){res.render('projects');});
 // server.get('/photography', function(req, res){res.render('photography');});
