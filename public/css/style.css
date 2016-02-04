@@ -6,6 +6,7 @@
 
 html {
   font-size:70%;
+  font-family: 'Raleway', sans-serif;
 }
 
 body  {
@@ -28,15 +29,8 @@ article {
 }
 
 ul {
-  min-height: 1.9rem;
   display: flex;
   justify-content: space-around;
-  box-shadow: 2px 2px 20px #989898;
-  border-style: solid;
-  border-width: thin;
-  border-left-style: none;
-  border-right-style: none;
-  border-color: #BBBBBB;
 }
 
 li {

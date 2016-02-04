@@ -65,12 +65,12 @@ server.get('/', function(req, res){res.sendfile('index.html');});
 // all else.
 
 // server.get('/404', function(req,res){res.render('404')})//error page.
+server.get('/professional', function(req, res){res.render('professional');});
 //
 // server.get('/projects', function(req, res){res.render('projects');});
 // server.get('/photography', function(req, res){res.render('photography');});
 // server.get('/social', function(req, res){res.render('social');});
 // server.get('/articles', function(req, res){res.render('articles');});
-// server.get('/professional', function(req, res){res.render('professional');});
 // server.get('/woodworking', function(req, res){res.render('woodworking');});
 // server.get('/hanoi/index', function(req, res){res.render('/hanoi/index');});
 
