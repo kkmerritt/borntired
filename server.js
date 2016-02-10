@@ -12,6 +12,7 @@ var  session        = require('express-session');
 var  logger         = require('./misc/logger.js');
 var  eyes           = require('eyespect');
 var mongoose = require('mongoose');                     // mongoose for mongodb
+var nodemailer = require('nodemailer');           //email contact form
 
 
 
@@ -59,6 +60,37 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 server.get('/', function(req, res){res.render('index');});
 server.get('/professional', function(req, res){res.render('professional');});
 server.get('/hanoi', function(req, res){res.render('hanoi/index');});
+
+
+
+
+// create reusable transporter object using the default SMTP transport
+var transporter = nodemailer.createTransport('smtps://alcoholicjedi%40gmail.com:pass@smtp.gmail.com');
+
+// setup e-mail data with unicode symbols
+var mailOptions = {
+    from: 'Fred Foo 👥 <foo@blurdybloop.com>', // sender address
+    to: 'alcoholicjedi@gmail.com', // list of receivers
+    subject: 'Hello ✔', // Subject line
+    text: 'Hello world 🐴', // plaintext body
+    html: '<b>Hello world 🐴</b>' // html body
+};
+
+// send mail with defined transport object
+transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        return console.log(error);
+    }
+    console.log('Message sent: ' + info.response);
+});
+
+
+
+
+
+
+
+
 
 // NOTE: begin old server routes section----------->>>
 
