@@ -58,6 +58,7 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 
 server.get('/', function(req, res){res.render('index');});
 server.get('/professional', function(req, res){res.render('professional');});
+server.get('/hanoi', function(req, res){res.render('hanoi/index');});
 
 // NOTE: begin old server routes section----------->>>
 
@@ -72,6 +73,5 @@ server.get('/professional', function(req, res){res.render('professional');});
 // server.get('/social', function(req, res){res.render('social');});
 // server.get('/articles', function(req, res){res.render('articles');});
 // server.get('/woodworking', function(req, res){res.render('woodworking');});
-// server.get('/hanoi/index', function(req, res){res.render('/hanoi/index');});
 
 // NOTE: end old server routes section----------->>>

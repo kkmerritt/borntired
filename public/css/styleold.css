@@ -1,0 +1,114 @@
+/*general styles*/
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+html {
+  font-size:70%;
+  font-family: 'Raleway', sans-serif;
+}
+
+body  {
+  background-repeat: repeat-y;
+  background-position: top 10%;
+  background-size: cover;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  max-width: 750px;
+  font-variant: small-caps;
+  font-family: 'Ubuntu Mono', ;
+  color: #272727;
+  font-size: 1.5rem;
+}
+
+article {
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  height: auto;
+  width: auto;
+  text-align: center;
+  display: inline;
+  padding: 0px 25px 0px 2px;
+}
+
+p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+
+a {
+  text-decoration: none;
+  color: indianred;
+  transition: all .5s ease;
+}
+
+a:hover {
+  transition: all 1.5s;
+  color: black;
+
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+
+}
+.footer-icons {
+  -webkit-filter: grayscale(100%);
+  margin: auto;
+  width: 10rem;
+  opacity: 1;
+}
+
+.footer-icons:hover {
+  -webkit-filter: none;
+  transition: all 1s;
+}
+
+
+header {
+  background-image: url("/img/graphpaperbg.jpg");
+  background-size: 100%;
+}
+
+#btlogo {
+  width: 30%;
+  margin-left: 10%;
+
+}
+
+/*angular styling */
+input.ng-valid {
+    background-color: lightgreen;
+}
+input.ng-invalid {
+    background-color: red;
+}
+
+/*media styles*/
+
+@media (max-width: 500px) {
+  h1 {
+    padding: 0px;
+  }
+  li {
+    padding: 5px;
+    display: block;
+  }
+}
