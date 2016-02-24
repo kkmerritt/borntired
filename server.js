@@ -2,7 +2,7 @@
 // NOTE: ----------------------  Forum Project
 // NOTE: ----------------------  Server.js
 
-var express      = require('express');
+var express         = require('express');
 var    ejs          = require('ejs');
 var   bodyParser    = require('body-parser');  // pull information from HTML POST (express4)
 var  methodOverride = require('method-override');  // simulate DELETE and PUT (express4)
@@ -11,8 +11,8 @@ var  session        = require('express-session');
 // var  User           = require('./models/user.js');
 var  logger         = require('./misc/logger.js');
 var  eyes           = require('eyespect');
-var mongoose = require('mongoose');                     // mongoose for mongodb
-var nodemailer = require('nodemailer');           //email contact form
+var mongoose        = require('mongoose');                     // mongoose for mongodb
+var nodemailer      = require('nodemailer');           //email contact form
 
 
 
@@ -58,52 +58,4 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 // NOTE: ---------------------- Server Routes
 
 server.get('/', function(req, res){res.render('index');});
-server.get('/professional', function(req, res){res.render('professional');});
-server.get('/hanoi', function(req, res){res.render('hanoi/index');});
-
-
-
-
-// create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://alcoholicjedi%40gmail.com:pass@smtp.gmail.com');
-
-// setup e-mail data with unicode symbols
-var mailOptions = {
-    from: 'Fred Foo 👥 <foo@blurdybloop.com>', // sender address
-    to: 'alcoholicjedi@gmail.com', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world 🐴', // plaintext body
-    html: '<b>Hello world 🐴</b>' // html body
-};
-
-// send mail with defined transport object
-transporter.sendMail(mailOptions, function(error, info){
-    if(error){
-        return console.log(error);
-    }
-    console.log('Message sent: ' + info.response);
-});
-
-
-
-
-
-
-
-
-
-// NOTE: begin old server routes section----------->>>
-
-// NOTE: KEVIN you commented this out as you only
-// need to render / send index. angular should handle
-// all else.
-
-// server.get('/404', function(req,res){res.render('404')})//error page.
-//
-// server.get('/projects', function(req, res){res.render('projects');});
-// server.get('/photography', function(req, res){res.render('photography');});
-// server.get('/social', function(req, res){res.render('social');});
-// server.get('/articles', function(req, res){res.render('articles');});
-// server.get('/woodworking', function(req, res){res.render('woodworking');});
-
-// NOTE: end old server routes section----------->>>
+server.post('/contact', function(req, res){res.render('messagesent');});
