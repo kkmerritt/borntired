@@ -11,8 +11,9 @@ var  session        = require('express-session');
 // var  User           = require('./models/user.js');
 var  logger         = require('./misc/logger.js');
 var  eyes           = require('eyespect');
-var mongoose        = require('mongoose');                     // mongoose for mongodb
-var nodemailer      = require('nodemailer');           //email contact form
+var mongoose        = require('mongoose');
+var sendgrid_api_key = "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"
+var sendgrid        = require('sendgrid')(sendgrid_api_key);
 
 
 
@@ -58,4 +59,83 @@ db.once('open', function(){console.log("DATABASE: CONNECTED: " + dbname)})
 // NOTE: ---------------------- Server Routes
 
 server.get('/', function(req, res){res.render('index');});
-server.post('/contact', function(req, res){res.render('messagesent');});
+
+server.post('/', function(req,res){
+
+var sendgrid  = require('sendgrid')(sendgrid_api_key);
+sendgrid.send({
+  to:       'kkmerritt@gmail.com',
+  from: req.body.email,
+  subject:  'borntired email',
+  text:     req.body.name + " - " + req.body.message
+
+}, function(err, json) {
+  if (err) {res.render('404');}
+  else {res.render('messagesent');}
+  console.log(json);
+});
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// server.post('/', function (req, res) {
+//   var transporter = nodemailer.createTransport('smtps://alcoholicjedi%40gmail.com:Launchpad33@smtp.gmail.com');
+//
+//
+//   });
+//   var mailOptions = {
+//     from: req.body.name + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
+//     to: 'alcoholicjedi@gmail.com',
+//     subject: 'Website contact form',
+//     text: req.body.message
+//   };
+//   //Mail options
+//   mailOpts = {
+//       from: req.body.name + ' &lt;' + req.body.email + '&gt;', //grab form data from the request body object
+//       to: 'alcoholicjedi@gmail.com',
+//       subject: 'Website contact form',
+//       text: req.body.message
+//   };
+//   smtpTrans.sendMail(mailOpts, function (error, response) {
+//       //Email not sent
+//       if (error) {
+//           res.render('404', { title: 'Raging Flame Laboratory - Contact', msg: 'Error occured, message not sent.', err: true, page: '404' })
+//       }
+//       //Yay!! Email sent
+//       else {
+//           res.render('messagesent', { title: 'Raging Flame Laboratory - Contact', msg: 'Message sent! Thank you.', err: false, page: 'messagesent' })
+//       }
+//   });
+// });
