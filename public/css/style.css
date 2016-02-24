@@ -9,7 +9,8 @@ body {
   border-width: thin;
   border-radius: 150px;
   border-color: black;
-  width: 40rem;
+  height: 25rem;
+
 }
 
 .portfolio-link {
