@@ -4,4 +4,4 @@ node_modules
 
 //NOTE  ----------------secrets-----------------//
 
-apikeys.js
+misc/apikeys.js
