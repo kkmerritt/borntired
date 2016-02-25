@@ -64,7 +64,7 @@ server.post('/', function(req,res){
 
 var sendgrid  = require('sendgrid')(sendgrid_api_key);
 sendgrid.send({
-  to:       'process.env.EMAIL',
+  to:       process.env.EMAIL,
   from: req.body.email,
   subject:  'borntired email',
   text:     req.body.name + " - " + req.body.message
