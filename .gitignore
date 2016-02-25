@@ -1,2 +1,7 @@
+//NOTE  ----------------unneeded files-----------------//
+
 node_modules
+
+//NOTE  ----------------secrets-----------------//
+
 apikeys.js
