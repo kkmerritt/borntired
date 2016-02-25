@@ -12,7 +12,7 @@ var  session        = require('express-session');
 var  logger         = require('./misc/logger.js');
 var  eyes           = require('eyespect');
 var mongoose        = require('mongoose');
-var sendgrid_api_key = require('./misc/apikeys.js');;
+var sendgrid_api_key = process.env.sendgrid_api_key;
 var sendgrid        = require('sendgrid')(sendgrid_api_key);
 
 
@@ -64,7 +64,7 @@ server.post('/', function(req,res){
 
 var sendgrid  = require('sendgrid')(sendgrid_api_key);
 sendgrid.send({
-  to:       'kkmerritt@gmail.com',
+  to:       'process.env.EMAIL',
   from: req.body.email,
   subject:  'borntired email',
   text:     req.body.name + " - " + req.body.message
