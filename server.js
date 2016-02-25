@@ -12,7 +12,6 @@ var  session        = require('express-session');
 var  logger         = require('./misc/logger.js');
 var  eyes           = require('eyespect');
 var mongoose        = require('mongoose');
-var sendgrid_api_key = "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"
 var sendgrid        = require('sendgrid')(sendgrid_api_key);
 
 
