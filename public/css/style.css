@@ -9,6 +9,15 @@ body {
 a, li {
   color: blue;
 }
+.header {
+  border-style: solid;
+  border-width: thin;
+  border-color: black;
+  border-radius: 10px;
+  height: 25rem;
+ -webkit-filter: grayscale(100%);
+
+}
 
 .myphoto {
   border-style: solid;
@@ -43,7 +52,7 @@ a, li {
 }
 
 .img-responsive {
--webkit-filter: sepia(70%);
+-webkit-filter: grayscale(100%);
 /*-webkit-filter: opacity(50%);*/
 
 }
