@@ -16,9 +16,6 @@ var sendgrid_api_key = process.env.sendgrid_api_key;
 var sendgrid        = require('sendgrid')(sendgrid_api_key);
 
 
-
-
-
 PORT = process.env.PORT || 3000, server = express(),
 MONGOURI = process.env.MONGOLAB_URI || "mongodb://localhost:27017/users",
   dbname = "borntired", mongoose = require('mongoose');
