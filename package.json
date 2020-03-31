@@ -24,7 +24,7 @@
     "express-session": "^1.17.0",
     "eyespect": "^0.1.10",
     "method-override": "^2.3.10",
-    "mongoose": "^4.13.20",
+    "mongoose": "^5.7.5",
     "morgan": "^1.10.0",
     "nodemailer": "^2.1.0",
     "sendgrid": "^2.0.0"
