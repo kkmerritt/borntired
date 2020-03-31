@@ -19,15 +19,15 @@
   "homepage": "https://github.com/kkmerritt/borntired#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^2.3.4",
+    "ejs": "^3.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "eyespect": "^0.1.10",
-    "method-override": "^2.3.10",
-    "mongoose": "^4.13.20",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.9.7",
     "morgan": "^1.10.0",
-    "nodemailer": "^2.1.0",
-    "sendgrid": "^2.0.0"
+    "nodemailer": "^6.4.6",
+    "sendgrid": "^5.2.3"
   },
   "devDependencies": {}
 }
