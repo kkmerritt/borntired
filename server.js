@@ -1,5 +1,5 @@
 // NOTE: ----------------------  Kevin Merritt
-// NOTE: ----------------------  Forum Project
+// NOTE: ----------------------  BornTired Project
 // NOTE: ----------------------  Server.js
 
 var express         = require('express');
